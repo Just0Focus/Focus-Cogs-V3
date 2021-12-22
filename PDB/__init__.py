@@ -1,5 +1,18 @@
-from .mycog import MyCog
+import json
+from pathlib import Path
+
+from redbot.core.bot import Red
+
+from .pdb import PDB
 
 
-def setup(bot):
-    bot.add_cog(MyCog(bot))
+async def setup(bot: Red) -> None:
+    cog = PDB(bot)
+    bot.add_cog(cog)
+    #
+
+    '''
+
+    '''
+
+    await cog._setup()
